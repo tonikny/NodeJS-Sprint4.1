@@ -1,4 +1,16 @@
+const multer = require('multer')
+const upload = multer({ dest: 'uploads/' })
+/* var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads')
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.fieldname + '-' + Date.now())
+  }
+})
 
+var upload = multer({ storage: storage })
+ */
 const express = require('express');
 const app = express();
 const port = 3000;
@@ -13,19 +25,14 @@ app.get('/user', (req, res) => {
   res.send(response);
 });
 
-app.post('/upload', (req, res) => {
-  if (Object.keys(req.files).length == 0) {
-    return res.status(400).send('No files were uploaded.');
-   }
-  
-   let uploadFile = req.files.file;
-  
-   uploadFile.mv(fileDir, function(err) {
-    if (err)
-     return res.status(500).send(err);
-  
-    res.send('File uploaded!');
-   });
+app.post('/upload', upload.single('imatge'), (req, res, next) => {
+  const file = req.file
+  if (!file) {
+    const error = new Error('Please upload a file')
+    error.httpStatusCode = 400
+    return next(error)
+  }
+    res.send(file)
 });
 
 app.listen(port, () => {
