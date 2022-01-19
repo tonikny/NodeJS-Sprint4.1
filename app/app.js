@@ -8,9 +8,9 @@ const upload = multer({ dest: 'uploads/' })
     cb(null, file.fieldname + '-' + Date.now())
   }
 })
-
 var upload = multer({ storage: storage })
  */
+
 const express = require('express');
 const app = express();
 const port = 3000;
@@ -25,10 +25,11 @@ app.get('/user', (req, res) => {
   res.send(response);
 });
 
+// TODO: filtre de imatges vàlides
 app.post('/upload', upload.single('imatge'), (req, res, next) => {
   const file = req.file
   if (!file) {
-    const error = new Error('Please upload a file')
+    const error = new Error("S'ha de pujar una imatge")
     error.httpStatusCode = 400
     return next(error)
   }
@@ -36,5 +37,5 @@ app.post('/upload', upload.single('imatge'), (req, res, next) => {
 });
 
 app.listen(port, () => {
-  console.log(`App listening at ${base_url}:${port}`);
+  console.log(`App escoltant a ${base_url}:${port}`);
 });
