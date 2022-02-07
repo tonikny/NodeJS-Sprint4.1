@@ -1,6 +1,9 @@
 
 # REST API
 
+## Ús
+- `npm start`
+
 ## Estructura del projecte
 
 - <b>app</b>:
