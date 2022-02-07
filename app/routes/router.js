@@ -9,5 +9,7 @@ router.get('/user', rutaUser.user);
 
 router.post('/upload', uploadSingle, uploadImatge);
 
+router.post('/time', '');
+
 
 module.exports = { router }
