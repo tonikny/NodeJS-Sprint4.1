@@ -14,6 +14,7 @@
     - <b>tmp/uploaded_img</b>
     - <b>app.js</b>. Entry point.
 - <b>package.json</b>.
+- <b>*.postman.collection.json</b>.
 
 ## Mòduls NPM usats
 
