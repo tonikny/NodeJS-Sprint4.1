@@ -20,3 +20,4 @@
 
 - Express
 - Multer
+- Cors
