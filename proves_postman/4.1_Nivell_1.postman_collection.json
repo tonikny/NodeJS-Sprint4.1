@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "dd43a241-1ff8-4ee1-83a6-b11a6c1ddebb",
+		"name": "4.1_Nivell_1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:3000/user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/user",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "localhost:3000/user",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/user",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "68"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"44-gSyk2wqPG49YCM+9Qt0lVCbIHQc\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 07 Feb 2022 22:31:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user\": {\n        \"nom\": \"Toni\",\n        \"edat\": 51\n    },\n    \"url\": \"http://localhost:3000/user\"\n}"
+				}
+			]
+		},
+		{
+			"name": "localhost:3000/upload",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept-encoding": true,
+					"user-agent": true,
+					"host": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "imatge",
+							"type": "file",
+							"src": "/home/toni/Escriptori/Trafic-base.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/upload",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"upload"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "localhost:3000/upload",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "imatge",
+									"type": "file",
+									"src": "/home/toni/Escriptori/Trafic-base.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/upload",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"upload"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "251"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"fb-6QixQcKQS8jvuj40j5UkbPaY0nQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 07 Feb 2022 22:30:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"fieldname\": \"imatge\",\n    \"originalname\": \"Trafic-base.png\",\n    \"encoding\": \"7bit\",\n    \"mimetype\": \"image/png\",\n    \"destination\": \"app/tmp/uploaded_img\",\n    \"filename\": \"1644273059916-Trafic-base.png\",\n    \"path\": \"app/tmp/uploaded_img/1644273059916-Trafic-base.png\",\n    \"size\": 1385894\n}"
+				}
+			]
+		}
+	]
+}
