@@ -11,10 +11,12 @@ router.post('/upload', uploadSingle, uploadImatge);
 
 
 const cors = require('cors');
+const auth = require('../middlewares/auth');
 const noCache = require('../middlewares/noCache');
 const time = require('../controllers/time');
 router.post(
   '/time',          // ruta
+  auth,             // app/middlewares/auth.js
   cors(),           // cors (express)
   noCache,          // app/middlewares/noCache.js
   express.json(),   // per acceptar paràmetre json
