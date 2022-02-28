@@ -5,7 +5,8 @@ const time = (req, res) => {
     const now = Date();
     res.json({ now });
   } else {
-    res.send('No hi ha usuari a la peticio');
+    const err = new Error('No hi ha usuari a la petició');
+    res.status(400).send({error: err.message});
   }
 }
 

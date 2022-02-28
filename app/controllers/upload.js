@@ -5,9 +5,8 @@ const uploadSingle = upload.single('imatge');
 const uploadImatge = (req, res, next) => {
   const file = req.file;
   if (!file) {
-    const error = new Error("S'ha de pujar una imatge");
-    error.httpStatusCode = 400;
-    return next(error);
+    const err = new Error("S'ha de pujar una imatge");
+    return res.status(400).send({error: err.message});
   }
   console.log('Imatge pujada correctament');
   res.send(file);
