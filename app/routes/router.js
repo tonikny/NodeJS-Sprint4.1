@@ -16,10 +16,10 @@ const noCache = require('../middlewares/noCache');
 const time = require('../controllers/time');
 router.post(
   '/time',          // ruta
-  auth,             // app/middlewares/auth.js
+  express.json(),   // per acceptar paràmetre json
   cors(),           // cors (express)
   noCache,          // app/middlewares/noCache.js
-  express.json(),   // per acceptar paràmetre json
+  auth,             // app/middlewares/auth.js
   time              // retorna data/hora si hi ha parámetre usuari
 );
 
